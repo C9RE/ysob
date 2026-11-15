@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The boot page only: if the engine won't start it may ask to start it again or to open the engine's log. The engine's UI talks to the engine over HTTP, never to Tauri.",
+  "windows": ["main"],
+  "permissions": ["allow-engine-retry", "allow-open-log"]
+}

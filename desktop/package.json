@@ -1,0 +1,14 @@
+{
+  "name": "ysob-desktop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prep": "bun prep.js",
+    "icon": "tauri icon ../packs/default/icon/icon_1024.png -o src-tauri/icons",
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

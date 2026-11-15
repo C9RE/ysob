@@ -1,0 +1,6 @@
+target/
+node_modules/
+dist/
+.DS_Store
+# theme packs (art and sound) are never committed; see README, Theme packs
+ui/public/packs/

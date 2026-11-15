@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-tray-needs"
+description = "Enables the tray_needs command without any pre-configured scope."
+commands.allow = ["tray_needs"]
+
+[[permission]]
+identifier = "deny-tray-needs"
+description = "Denies the tray_needs command without any pre-configured scope."
+commands.deny = ["tray_needs"]

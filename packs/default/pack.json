@@ -1,0 +1,438 @@
+{
+ "name": "default",
+ "roster": [
+  {
+   "name": "Chief",
+   "slug": "chief",
+   "job": "Squad leader",
+   "does": "Plans the mission and gives the orders",
+   "lane": "WRITE",
+   "hue": 32,
+   "boss": true
+  },
+  {
+   "name": "Scout",
+   "slug": "scout",
+   "job": "Recon",
+   "does": "Reads the code and finds things first",
+   "lane": "READ",
+   "hue": 150
+  },
+  {
+   "name": "Gunner",
+   "slug": "gunner",
+   "job": "Builder",
+   "does": "Builds features and runs the commands",
+   "lane": "WRITE",
+   "hue": 8
+  },
+  {
+   "name": "Watch",
+   "slug": "watch",
+   "job": "Reviewer",
+   "does": "Reviews changes and runs the tests",
+   "lane": "WRITE",
+   "hue": 205
+  },
+  {
+   "name": "Sapper",
+   "slug": "sapper",
+   "job": "Demolitions",
+   "does": "Risky work: migrations, deploys, big refactors",
+   "lane": "HOST",
+   "hue": 48
+  },
+  {
+   "name": "Radio",
+   "slug": "radio",
+   "job": "Research",
+   "does": "Research, docs and keeping you posted",
+   "lane": "READ",
+   "hue": 265
+  },
+  {
+   "name": "Suit",
+   "slug": "suit",
+   "job": "Second opinion",
+   "does": "A second opinion from another engine",
+   "lane": "READ",
+   "hue": 330
+  },
+  {
+   "name": "Ranger",
+   "slug": "ranger",
+   "job": "Tester",
+   "does": "Checks the work really works",
+   "lane": "WRITE",
+   "hue": 95
+  }
+ ],
+ "crew": {
+  "chief": {
+   "portrait": "crew/chief.png",
+   "anchor": {
+    "portrait": [
+     0.4453,
+     0.9766
+    ],
+    "head": [
+     0.4375,
+     0.0312,
+     0.9453
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/chief_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3438,
+      0.9141
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/chief_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3438,
+      0.9141
+     ],
+     "muzzle": [
+      0.781,
+      0.305
+     ]
+    }
+   }
+  },
+  "scout": {
+   "portrait": "crew/scout.png",
+   "anchor": {
+    "portrait": [
+     0.5,
+     0.9609
+    ],
+    "head": [
+     0.4688,
+     0.0547,
+     0.9062
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/scout_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3633,
+      0.8906
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/scout_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3633,
+      0.8906
+     ],
+     "muzzle": [
+      0.758,
+      0.312
+     ]
+    }
+   }
+  },
+  "gunner": {
+   "portrait": "crew/gunner.png",
+   "anchor": {
+    "portrait": [
+     0.3945,
+     0.9297
+    ],
+    "head": [
+     0.3633,
+     0.0625,
+     0.8672
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/gunner_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3398,
+      0.875
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/gunner_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3398,
+      0.875
+     ],
+     "muzzle": [
+      0.75,
+      0.359
+     ]
+    }
+   }
+  },
+  "watch": {
+   "portrait": "crew/watch.png",
+   "anchor": {
+    "portrait": [
+     0.4492,
+     0.9766
+    ],
+    "head": [
+     0.457,
+     0.0234,
+     0.9531
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/watch_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3438,
+      0.8516
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/watch_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3438,
+      0.8516
+     ],
+     "muzzle": [
+      0.805,
+      0.359
+     ]
+    }
+   }
+  },
+  "sapper": {
+   "portrait": "crew/sapper.png",
+   "anchor": {
+    "portrait": [
+     0.4648,
+     0.9688
+    ],
+    "head": [
+     0.4961,
+     0.0625,
+     0.9062
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/sapper_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3242,
+      0.8594
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/sapper_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3242,
+      0.8594
+     ],
+     "muzzle": [
+      0.695,
+      0.297
+     ]
+    }
+   }
+  },
+  "radio": {
+   "portrait": "crew/radio.png",
+   "anchor": {
+    "portrait": [
+     0.4414,
+     0.9688
+    ],
+    "head": [
+     0.457,
+     0.0234,
+     0.9453
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/radio_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3242,
+      0.9062
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/radio_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3242,
+      0.9062
+     ],
+     "muzzle": [
+      0.703,
+      0.312
+     ]
+    }
+   }
+  },
+  "suit": {
+   "portrait": "crew/suit.png",
+   "anchor": {
+    "portrait": [
+     0.4492,
+     0.9688
+    ],
+    "head": [
+     0.4648,
+     0.0312,
+     0.9375
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/suit_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3672,
+      0.8828
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/suit_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3672,
+      0.8828
+     ],
+     "muzzle": [
+      0.617,
+      0.258
+     ]
+    }
+   }
+  },
+  "ranger": {
+   "portrait": "crew/ranger.png",
+   "anchor": {
+    "portrait": [
+     0.457,
+     0.9531
+    ],
+    "head": [
+     0.4688,
+     0.0547,
+     0.8984
+    ]
+   },
+   "anims": {
+    "idle": {
+     "sheet": "sprites/ranger_idle.png",
+     "frames": 1,
+     "w": 128,
+     "h": 128,
+     "ms": 600,
+     "anchor": [
+      0.3008,
+      0.8984
+     ]
+    },
+    "fire": {
+     "sheet": "sprites/ranger_fire.png",
+     "frames": 2,
+     "w": 128,
+     "h": 128,
+     "ms": 90,
+     "anchor": [
+      0.3008,
+      0.8984
+     ],
+     "muzzle": [
+      0.828,
+      0.211
+     ]
+    }
+   }
+  }
+ },
+ "hunter": {
+  "portrait": "crew/hunter.png",
+  "anchor": {
+   "head": [
+    0.4648,
+    0.0234,
+    0.9531
+   ]
+  },
+  "anims": {
+   "idle": {
+    "sheet": "crew/hunter.png",
+    "frames": 1,
+    "w": 128,
+    "h": 128,
+    "ms": 600,
+    "anchor": [
+     0.4375,
+     0.9766
+    ]
+   }
+  }
+ },
+ "sounds": {},
+ "scenes": {
+  "hero": "scenes/hero.png",
+  "panel": "scenes/panel.png",
+  "thermal": "scenes/thermal.png"
+ },
+ "handshake": "icon/handshake.png"
+}

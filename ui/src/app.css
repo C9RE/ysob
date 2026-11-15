@@ -1,0 +1,223 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0b0d0a;
+  --color-panel: #111410;
+  --color-raise: #181c15;
+  --color-hover: #20251c;
+  --color-line: rgb(255 255 255 / 0.06);
+  --color-ink: #eceee6;
+  --color-mute: #949b8d;
+  --color-faint: #8b9583;
+  --color-go: #7fd68f;
+  --color-ask: #f4b54a;
+  --color-hit: #ff4b3a;
+  --color-heat: #ff8a1f;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-pixel: 'Pixelify Sans', ui-monospace, monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+  overflow: hidden;
+}
+
+::selection {
+  background: rgb(255 138 31 / 0.32);
+  color: #fff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.12) transparent;
+}
+
+/* The desktop app is a tool, not a page: no rubber-banding, no text cursor over the chrome. */
+html {
+  overscroll-behavior: none;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+input,
+textarea {
+  caret-color: var(--color-heat);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* One focus ring everywhere: orange, outside the control, following its own corners. */
+:focus-visible {
+  outline: 2px solid rgb(255 138 31 / 0.85);
+  outline-offset: 2px;
+}
+
+/* Text fields show focus on their own surface instead (the outline would double it up). */
+.field {
+  height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--color-raise);
+  color: var(--color-ink);
+  font: inherit;
+  outline: none;
+  box-shadow: inset 0 0 0 1px transparent;
+  transition: box-shadow 0.15s var(--ease), background 0.15s var(--ease);
+}
+.field:hover {
+  background: var(--color-hover);
+}
+.field:focus-visible {
+  outline: none;
+  background: var(--color-hover);
+  box-shadow: inset 0 0 0 1.5px rgb(255 138 31 / 0.85);
+}
+.field::placeholder {
+  color: var(--color-faint);
+}
+select.field {
+  appearance: none;
+  padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%23949b8d' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+select.field option {
+  background: var(--color-raise);
+  color: var(--color-ink);
+}
+
+/* A key on the keyboard. */
+kbd {
+  display: inline-block;
+  min-width: 18px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 0.1);
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 0.45);
+  font: 600 10.5px/1.5 var(--font-mono);
+  text-align: center;
+}
+
+.pixel {
+  image-rendering: pixelated;
+}
+
+/* Buttons: one primary, one quiet. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-weight: 550;
+  font-size: 13px;
+  background: var(--color-raise);
+  color: var(--color-ink);
+  white-space: nowrap;
+  transition: background 0.15s var(--ease), scale 0.15s var(--ease);
+}
+.btn:hover {
+  background: var(--color-hover);
+}
+.btn:active {
+  scale: 0.96;
+}
+.btn.primary {
+  background: var(--color-ink);
+  color: #0b0d0a;
+}
+.btn.primary:hover {
+  background: #fff;
+}
+.btn.danger {
+  background: rgb(255 75 58 / 0.14);
+  color: #ff8b7f;
+}
+.btn.danger:hover {
+  background: rgb(255 75 58 / 0.22);
+}
+.btn.go {
+  background: var(--color-go);
+  color: #08140b;
+}
+.btn.go:hover {
+  background: #95e3a3;
+}
+.btn.small {
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Icon-only buttons: a 32px square with a quiet hover. */
+.icon-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  color: var(--color-mute);
+  transition: background 0.15s var(--ease), color 0.15s var(--ease), scale 0.15s var(--ease);
+}
+.icon-btn:hover {
+  background: var(--color-hover);
+  color: var(--color-ink);
+}
+.icon-btn:active {
+  scale: 0.96;
+}
+.icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Reduced motion: nothing loops or travels. Animations jump to their end state (so a state
+   change still lands), and the short colour and opacity fades stay as feedback. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

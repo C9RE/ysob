@@ -1,0 +1,35 @@
+[package]
+name = "ysob-desktop"
+version = "0.2.3"
+edition = "2021"
+description = "YSOB desktop shell: runs the ysob engine and opens a window on it"
+
+# Its own workspace: the engine's `cargo test` at the repo root never builds the webview.
+[workspace]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+# One window per machine: a second launch focuses the first instead of starting a second engine.
+tauri-plugin-single-instance = "2"
+# Signed self-updates (src/update.rs).
+tauri-plugin-updater = "2"
+# The system's folder picker for "New mission" (the one thing a web page can't do itself).
+tauri-plugin-dialog = "2"
+# Opens a link from a reply in the system's browser (web links only, see open_link).
+tauri-plugin-opener = "2"
+# A desktop notification when a squad member needs you and YSOB is hidden or behind other windows.
+tauri-plugin-notification = "2"
+serde_json = "1"
+
+# Win+Z for Snap Layouts on our own maximise button (snap_layouts). Already in the tree via
+# Tauri, so this adds no new crate, only the keyboard-input bindings.
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_UI_Input_KeyboardAndMouse"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

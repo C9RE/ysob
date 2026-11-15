@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>You Son Of A Bitch</title>
+<!-- The splash on its own: the handshake floating on the desktop in a see-through, frameless
+     window while the engine starts. The shell fades it ("out") once the app window is in. A pack
+     with no handshake gets the three dots and the wordmark instead. -->
+<style>
+  @font-face { font-family: 'Pixel'; src: url('pixel.woff2') format('woff2'); font-weight: 700; font-display: block; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+  body { display: grid; place-items: center; user-select: none; cursor: default; transition: opacity 0.4s ease, transform 0.4s ease; }
+  body.out { opacity: 0; transform: scale(0.96); }
+  /* 104 px art at 3x. The arms run off the original crop, so those edges fade out. */
+  .shake {
+    display: block;
+    width: 312px;
+    height: 312px;
+    image-rendering: pixelated;
+    -webkit-mask-image: linear-gradient(#000 60%, transparent 98%), linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(#000 60%, transparent 98%), linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+    mask-composite: intersect;
+    filter: drop-shadow(0 12px 18px rgb(0 0 0 / 0.55));
+    animation: in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both, grip 2.4s 0.6s ease-in-out infinite;
+  }
+  @keyframes in { from { opacity: 0; transform: scale(0.92); } }
+  @keyframes grip { 50% { transform: translateY(-4px) rotate(-1deg); } }
+  .mark { display: none; justify-items: center; animation: in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .bare .shake { display: none; }
+  .bare .mark { display: grid; }
+  .dots { position: relative; width: 30px; height: 26px; }
+  .dots i { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #ff3b26; box-shadow: 0 0 8px 2px rgb(255 59 38 / 0.6); animation: pulse 1.6s ease-in-out infinite; }
+  .dots i:nth-child(1) { left: 11px; top: 0; }
+  .dots i:nth-child(2) { left: 0; top: 18px; animation-delay: 0.1s; }
+  .dots i:nth-child(3) { left: 22px; top: 18px; animation-delay: 0.2s; }
+  @keyframes pulse { 50% { box-shadow: 0 0 26px 7px rgb(255 59 38 / 0.7), 0 0 2px #ff7b66; } }
+  h1 { margin: 16px 0 0; font: 700 46px/1 'Pixel', system-ui, sans-serif; letter-spacing: 0.04em; color: #eceee6; text-shadow: 0 3px 0 #0b120d, 0 0 18px rgb(0 0 0 / 0.8); }
+  @media (prefers-reduced-motion: reduce) { .shake, .mark, .dots i { animation: none; } body { transition: none; } }
+</style>
+</head>
+<body>
+  <img class="shake" src="handshake.png" alt="" width="312" height="312">
+  <div class="mark" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><h1>YSOB</h1></div>
+<script src="splash.js"></script>
+</body>
+</html>
